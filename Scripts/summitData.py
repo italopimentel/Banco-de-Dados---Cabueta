@@ -30,7 +30,7 @@ dataFrame = { 'link': url, 'headline': headline,
 
 
 if newsType == 'V' or newsType == 'F':
-    df = pd.read_csv('DataBase/noticia{}.csv'.format(newsType), sep=';')
+    df = pd.read_csv('DataBase/noticia{}.csv'.format(newsType), sep=',')
     nova_linha = pd.DataFrame(dataFrame, index=[len(df)])
     df = pd.concat([df, nova_linha])
     df.to_csv('DataBase/noticia{}.csv'.format(newsType),index=False)
